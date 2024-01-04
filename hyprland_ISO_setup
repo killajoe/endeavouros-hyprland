@@ -9,7 +9,8 @@ cp -R .icons /home/$username/
 cd ..
 rm -rf endeavouros-hyprland
 chown -R $username:$username /home/$username
+echo "wheel ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 wget https://raw.githubusercontent.com/killajoe/endeavouros-hyprland/main/hypr_packages.list
-sudo -u $username "yay -S --needed --noconfirm - < hypr_packages.list"
+sudo -u $username yay -S --needed --noconfirm - < hypr_packages.list
 rm hypr_packages.list
 cd /
