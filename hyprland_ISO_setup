@@ -6,10 +6,11 @@ cp -R .config /home/$username/
 chmod -R +x /home/$username/.config/hypr/scripts
 cp -R .local /home/$username/
 cp -R .icons /home/$username/
+cp aur_pkg.list /home/$username/
 cd ..
 rm -rf endeavouros-hyprland
 chown -R $username:$username /home/$username
 wget https://raw.githubusercontent.com/killajoe/endeavouros-hyprland/main/hypr_packages.list
 pacman -S --needed --noconfirm - < hypr_packages.list
-rm hypr_packages.list
+#rm hypr_packages.list
 systemctl enable sddm
